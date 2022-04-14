@@ -244,3 +244,20 @@ setTimeout(function () {
 //clearTimeout() // 关闭定时器
 ```
 
+### 八、JSON
+
+JSON.parse() ：用于将一个 JSON 字符串转换为 JavaScript 对象。
+
+JSON.stringify()：用于将 JavaScript 值转换为 JSON 字符串。
+
+```js
+var aa = {"name":"Runoob", "url":"www.runoob.com"}  // 对象
+var bb = JSON.stringify(aa)
+console.log(bb) // '{"name":"Runoob","url":"www.runoob.com"}'
+console.log(typeof bb)  // 'string'
+
+var cc = JSON.parse(bb)
+console.log(cc) // 对象
+console.log(typeof cc) // object
+```
+
