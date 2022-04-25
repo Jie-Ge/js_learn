@@ -261,3 +261,23 @@ console.log(cc) // 对象
 console.log(typeof cc) // object
 ```
 
+### 九、值传递与引用传递
+
+我的总结：对于基本数据类型（String、Number等）传递的是值；对于对象（Object、Array等）传递的是地址，对参数进行增删改会同时修改原变量，而重新赋值就不会
+
+```js
+var rotate = function(nums, k) {
+   var len = nums.length;
+   var newArr = nums.splice(0, len-k)
+   console.log(newArr, nums) // [1,2,3,4] [5,6,7]
+   var temp = nums.concat(newArr)
+   console.log(temp) //[5,6,7,1,2,3,4]
+   nums = temp //[5,6,7,1,2,3,4]  对nums重新赋值，不会修改a
+};
+
+var a = [1,2,3,4,5,6,7]
+
+rotate(a, 3)
+console.log(a)  // [5, 6, 7]
+```
+
