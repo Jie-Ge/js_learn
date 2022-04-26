@@ -1,11 +1,12 @@
 ### 一、类型转换
 
-1、转为字符串：toString()、String()
+1、转为字符串：toString()、String()、+ ""
 
 ```js
 var a = 123;
 var b = a.toString();
-var c = String(a)
+var c = String(a);
+var d = a + ""
 ```
 
 2、转为数字：Number()、parseInt()、parseFloat()

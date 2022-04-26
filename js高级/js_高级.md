@@ -8,16 +8,40 @@
 
 判断：typeof、instanceof（判断是否是对象的实例）、=== 、==
 
-### 二、函数调用 call()/apply()
+### 二、函数调用 call()/apply()/bind()
+
+【参考】https://www.runoob.com/w3cnote/js-call-apply-bind.html
+
+call()、apply()、bind() 都是用来重定义 this 这个对象的
 
 ```js
-function test(){
-	console.log('text function!');
-};
-var obj = {};
-// test.call(obj);
-test.apply(obj); // 临时让test成为obj的方法进行调用
+var name = '小王', age = 17;
+var obj = {
+	name: '小张',
+	objAge: this.age,
+	myFun: function (fm, t) {
+		console.log(this.name + ' 年龄 ' + this.age + ' 来自 ' + fm + '去往' + t)
+	}
+}
+
+var db = {
+	name: '德玛',
+	age: 99
+}
+
+obj.myFun.call(db,'成都','上海');　　　 	// 德玛 年龄 99  来自 成都去往上海
+obj.myFun.apply(db,['成都','上海']);      // 德玛 年龄 99  来自 成都去往上海
+obj.myFun.bind(db,'成都','上海')();       // 德玛 年龄 99  来自 成都去往上海
+obj.myFun.bind(db,['成都','上海'])();　　  // 德玛 年龄 99  来自 成都, 上海去往 undefined
 ```
+
+- call 、bind 、 apply 这三个函数的第一个参数都是 this 的指向对象，第二个参数差别就来了：
+
+- call 的参数是直接放进去的，第二第三第 n 个参数全都用逗号分隔，直接放到后面 **obj.myFun.call(db,'成都', ... ,'string' )**。
+
+- apply 的所有参数都必须放在一个数组里面传进去 **obj.myFun.apply(db,['成都', ..., 'string' ])**。
+
+- bind 除了返回是函数以外，它 的参数和 call 一样。
 
 ### 三、回调函数
 
