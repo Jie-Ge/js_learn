@@ -1,3 +1,5 @@
+[TOC]
+
 【本教程视频】https://www.bilibili.com/video/BV14s411E7qf?p=2&spm_id_from=pageDriver
 
 ### 一、类型
