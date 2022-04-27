@@ -1,4 +1,21 @@
-[TOC]
+目录
+* [一、类型](#一类型)
+* [二、函数调用 call()/apply()/bind()](#二函数调用-callapplybind)
+* [三、回调函数](#三回调函数)
+* [四、构造函数](#四构造函数)
+* [五、IIFE立即执行函数](#五iife立即执行函数)
+* [六、this](#六this)
+* [七、prototype / \_\_proto\_\_](#七prototype--__proto__)
+  * [1、prototype](#1prototype)
+  * [2、\_\_proto\_\_](#2__proto__)
+  * [3、Object](#3object)
+* [八、原型链](#八原型链)
+* [九、闭包](#九闭包)
+  * [1、如何产生闭包？](#1如何产生闭包)
+  * [2、闭包到底是什么？](#2闭包到底是什么)
+  * [3、产生闭包的条件](#3产生闭包的条件)
+  * [4、闭包的作用](#4闭包的作用)
+  * [5、闭包的缺点](#5闭包的缺点)
 
 【本教程视频】https://www.bilibili.com/video/BV14s411E7qf?p=2&spm_id_from=pageDriver
 
