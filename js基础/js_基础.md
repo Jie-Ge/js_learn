@@ -297,3 +297,32 @@ rotate(a, 3)
 console.log(a)  // [5, 6, 7]
 ```
 
+
+
+### 十、执行 js 代码
+
+- 【参考】https://blog.csdn.net/zlc1990628/article/details/116198124
+
+- 方法1：
+  - 在项目目录下，安装jsdom： `npm install jsdom`
+
+- 方法2：
+  - 全局安装jsdom： `npm install jsdom -g`
+  - 在python中使用cwd参数，指定模块的所在目录，否则找不到模块
+
+- 在对应js代码里最前面加上以下代码就能正常运行
+  ```javascript
+  const jsdom = require("jsdom"); 
+  const { JSDOM } = jsdom; 
+  const dom = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`); 
+  window = dom.window; 
+  document = window.document; 
+  XMLHttpRequest = window.XMLHttpRequest;
+  ```
+
+- 或者不安装模块，只需要添加下面的代码
+
+  ```js
+  window = global;
+  document = window.document
+  ```
