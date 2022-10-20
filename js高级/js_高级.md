@@ -16,6 +16,7 @@
   * [3、产生闭包的条件](#3产生闭包的条件)
   * [4、闭包的作用](#4闭包的作用)
   * [5、闭包的缺点](#5闭包的缺点)
+* [十、js请求](#十js请求)
 
 【本教程视频】https://www.bilibili.com/video/BV14s411E7qf?p=2&spm_id_from=pageDriver
 
@@ -304,3 +305,20 @@ JavaScript中的所有对象都来自 Object；所有对象从Object.prototype�
 - 函数执行完成后，函数内部的局部变量没有释放，占用内存时间会变长
 - 容易造成内存泄漏（）
   - 解决方法：能不用闭包就不用；及时释放
+
+
+
+### 十、js请求
+
+```js
+var httpRequest = new XMLHttpRequest()
+httpRequest.open('GET', 'https://match.yuanrenxue.com/api/match/19?page=3')
+httpRequest.send()
+httpRequest.onreadystatechange = function () {
+    if (httpRequest.readyState == 4 && httpRequest.status == 200){
+        var json = httpRequest.responseText
+        console.log(json)
+    }
+}
+```
+
